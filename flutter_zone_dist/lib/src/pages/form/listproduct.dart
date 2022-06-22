@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
+import 'package:flutter_zone_dist/src/pages/categorias.dart';
 import 'package:flutter_zone_dist/src/pages/form/formbcp.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/categor1.dart';
+import 'package:flutter_zone_dist/src/pages/form_second/productos_page.dart';
 
 class Listproduct extends StatefulWidget {
   static String id = "Listproduct";
@@ -64,7 +66,7 @@ class _ListproductState extends State<Listproduct> {
                             child: const Text("Regresar"),
                             onPressed: () {
                               setState(() {
-                                Navigator.pushNamed(context, Categor1.id);
+                                Navigator.pushNamed(context, Listproduct.id);
                               });
                             },
                           ),
@@ -74,7 +76,7 @@ class _ListproductState extends State<Listproduct> {
           ),
         ],
         title: const Text(
-          "Regresar",
+          "Información del producto",
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 28.0, color: Colors.black),
         ),

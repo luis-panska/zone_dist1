@@ -36,11 +36,11 @@ class _FormbcpState extends State<Formbcp> {
           ),
           Row(
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.5,
                 child: _inputDate(),
               ),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.5,
                 child: _inputCote(),
               ),

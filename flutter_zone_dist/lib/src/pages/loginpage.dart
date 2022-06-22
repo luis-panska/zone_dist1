@@ -120,10 +120,8 @@ class _LoginPageState extends State<LoginPage> {
             password,
           )
               .then((value) {
-            log(value.toString());
             if (value != null) {
               if (value.data['ok']) {
-                token = value.data['token'];
                 showDialog(
                     context: context,
                     builder: (context) => AlertDialog(

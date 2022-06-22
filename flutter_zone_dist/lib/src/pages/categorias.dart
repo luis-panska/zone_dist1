@@ -90,7 +90,7 @@ class _CategoriasState extends State<Categorias> {
   }
 
   Widget _comidaRap(
-      String idCategory, String text, String test, String imgUrl) {
+      String idCategory, String title, String description, String imgUrl) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Card(
@@ -127,7 +127,7 @@ class _CategoriasState extends State<Categorias> {
             const Padding(
               padding: EdgeInsets.all(3.0),
             ),
-            Text(text,
+            Text(title,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 35.0,
@@ -135,7 +135,7 @@ class _CategoriasState extends State<Categorias> {
             const Padding(
               padding: EdgeInsets.all(8.0),
             ),
-            Text(text,
+            Text(description,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15.5,

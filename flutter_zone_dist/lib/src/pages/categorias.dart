@@ -3,6 +3,7 @@ import 'dart:developer';
 import "package:flutter/material.dart";
 import 'package:flutter_zone_dist/src/models/category_response.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/productos_page.dart';
+import 'package:flutter_zone_dist/src/pages/present.dart';
 import 'package:flutter_zone_dist/src/services/categoryservice.dart';
 
 class Categorias extends StatefulWidget {
@@ -18,6 +19,22 @@ class _CategoriasState extends State<Categorias> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Categorias",
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 28.0, color: Colors.black),
+        ),
+        backgroundColor: Colors.amberAccent,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            setState(() {
+              Navigator.pushNamed(context, Present.id);
+            });
+          },
+        ),
+      ),
       backgroundColor: Colors.amberAccent,
       body: ListView(
         padding: const EdgeInsets.all(10.0),
@@ -25,27 +42,13 @@ class _CategoriasState extends State<Categorias> {
           const SizedBox(
             height: 25.0,
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 3.0),
-            child: Row(
-              children: const <Widget>[
-                Text(
-                  "Comida rapida",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25.0,
-                      color: Colors.black),
-                )
-              ],
-            ),
-          ),
           const SizedBox(
             height: 20.0,
           ),
           Container(
             height: MediaQuery.of(context).size.height - 122.0,
             decoration: const BoxDecoration(
-              color: Colors.white,
+              color: Color.fromARGB(223, 228, 204, 204),
             ),
             child: ListView(
               padding:

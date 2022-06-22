@@ -27,10 +27,10 @@ class _Categor1State extends State<Categor1> {
             child: Row(
               children: const <Widget>[
                 Text(
-                  "Burger King - Productos",
+                  "Escoge el producto de tu preferencia",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 25.0,
+                      fontSize: 20.0,
                       color: Colors.black),
                 ),
               ],

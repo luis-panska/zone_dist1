@@ -1,5 +1,5 @@
 import 'dart:developer';
-
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zone_dist/src/pages/loginpage.dart';
 import 'package:flutter_zone_dist/src/pages/present.dart';
@@ -14,11 +14,27 @@ class Registro extends StatefulWidget {
 
 class _RegistroState extends State<Registro> {
   var username = "", email = "", password = "", phone = "";
+  var nomMask = MaskTextInputFormatter(
+      mask: '#########', filter: {"#": RegExp(r'[0-9]')});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 222, 222, 127),
       appBar: AppBar(
-        title: const Text("Registro"),
+        title: const Text(
+          "Registro",
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 28.0, color: Colors.black),
+        ),
+        backgroundColor: const Color.fromARGB(255, 126, 229, 63),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            setState(() {
+              Navigator.pushNamed(context, LoginPage.id);
+            });
+          },
+        ),
       ),
       body: SingleChildScrollView(
           child: Form(
@@ -52,8 +68,14 @@ class _RegistroState extends State<Registro> {
       padding: const EdgeInsets.all(15),
       child: TextFormField(
         decoration: const InputDecoration(
+          border: InputBorder.none,
+          fillColor: Color.fromARGB(255, 234, 182, 88),
+          filled: true,
           labelText: "Correo electrónico",
-          icon: Icon(Icons.email),
+          icon: Icon(
+            Icons.email,
+            color: Color.fromARGB(255, 200, 113, 47),
+          ),
           hintText: "example@gmail.com",
         ),
         onChanged: (value) {
@@ -70,8 +92,12 @@ class _RegistroState extends State<Registro> {
       padding: const EdgeInsets.all(15),
       child: TextFormField(
         decoration: const InputDecoration(
+          border: InputBorder.none,
+          fillColor: Color.fromARGB(255, 234, 182, 88),
+          filled: true,
           labelText: "Nombre de usuario",
-          icon: Icon(Icons.account_circle),
+          icon: Icon(Icons.account_circle,
+              color: Color.fromARGB(255, 200, 113, 47)),
           hintText: "Usuario",
         ),
         onChanged: (value) {
@@ -87,10 +113,14 @@ class _RegistroState extends State<Registro> {
     return Container(
       padding: const EdgeInsets.all(15),
       child: TextFormField(
+        keyboardType: TextInputType.text,
         obscureText: true,
         decoration: const InputDecoration(
+          border: InputBorder.none,
+          fillColor: Color.fromARGB(255, 234, 182, 88),
+          filled: true,
           labelText: "Password",
-          icon: Icon(Icons.lock),
+          icon: Icon(Icons.lock, color: Color.fromARGB(255, 200, 113, 47)),
           hintText: "Contraseña",
         ),
         onChanged: (value) {
@@ -106,9 +136,14 @@ class _RegistroState extends State<Registro> {
     return Container(
       padding: const EdgeInsets.all(15),
       child: TextFormField(
+        inputFormatters: [nomMask],
         decoration: const InputDecoration(
+          border: InputBorder.none,
+          fillColor: Color.fromARGB(255, 234, 182, 88),
+          filled: true,
           labelText: "Numero de telefono",
-          icon: Icon(Icons.phone_android),
+          icon: Icon(Icons.phone_android,
+              color: Color.fromARGB(255, 200, 113, 47)),
           hintText: "Telefono",
         ),
         onChanged: (value) {
@@ -138,7 +173,7 @@ class _RegistroState extends State<Registro> {
           borderRadius: BorderRadius.circular(10),
         ),
         elevation: 10.0,
-        color: Colors.blue,
+        color: const Color.fromARGB(255, 126, 229, 63),
         onPressed: () {
           AuthService()
               .create(

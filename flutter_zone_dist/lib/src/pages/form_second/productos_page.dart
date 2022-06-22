@@ -2,8 +2,11 @@ import 'dart:developer';
 
 import "package:flutter/material.dart";
 import 'package:flutter_zone_dist/src/models/products_by_category_response.dart';
+import 'package:flutter_zone_dist/src/pages/categorias.dart';
 import 'package:flutter_zone_dist/src/pages/form/listproduct.dart';
+import 'package:flutter_zone_dist/src/pages/form_second/categor1.dart';
 import 'package:flutter_zone_dist/src/services/categoryservice.dart';
+import 'package:flutter_zone_dist/src/pages/present.dart';
 
 class ProductosPage extends StatefulWidget {
   static String id = "ProductosPage";
@@ -29,6 +32,22 @@ class _ProductosPageState extends State<ProductosPage> {
     } */
     // navigato if (idCategory == null)
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Productos",
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 28.0, color: Colors.black),
+        ),
+        backgroundColor: Colors.amberAccent,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            setState(() {
+              Navigator.pushNamed(context, Categorias.id);
+            });
+          },
+        ),
+      ),
       backgroundColor: Colors.amberAccent,
       body: ListView(
         padding: const EdgeInsets.all(10.0),
@@ -36,27 +55,13 @@ class _ProductosPageState extends State<ProductosPage> {
           const SizedBox(
             height: 25.0,
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 3.0),
-            child: Row(
-              children: const <Widget>[
-                Text(
-                  "Burger King - Productos",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25.0,
-                      color: Colors.black),
-                ),
-              ],
-            ),
-          ),
           const SizedBox(
             height: 20.0,
           ),
           Container(
             height: MediaQuery.of(context).size.height - 122.0,
             decoration: const BoxDecoration(
-              color: Colors.white,
+              color: Color.fromARGB(223, 228, 204, 204),
             ),
             child: ListView(
               padding:
@@ -106,53 +111,51 @@ class _ProductosPageState extends State<ProductosPage> {
       String descripcion, String imagen) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
-      child: Container(
-        child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-          color: const Color.fromARGB(189, 255, 255, 255),
-          elevation: 5,
-          child: Column(
-            children: <Widget>[
-              Hero(
-                tag: imagen,
-                child: Material(
-                    child: Container(
-                        color: Colors.white,
-                        child: InkWell(
-                          onTap: () =>
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Listproduct(
-                                        nombre: nombre,
-                                        precio: precio,
-                                        imagen: imagen,
-                                      ))),
-                          child: Image.network(
-                            imagen,
-                            alignment: Alignment.center,
-                            width: 170,
-                            height: 170,
-                          ),
-                        ))),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(3.0),
-              ),
-              Text(nombre,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35.0,
-                      color: Colors.black)),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-              ),
-              Text(precio.toString(),
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15.5,
-                      color: Colors.black)),
-            ],
-          ),
+      child: Card(
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+        color: const Color.fromARGB(189, 255, 255, 255),
+        elevation: 5,
+        child: Column(
+          children: <Widget>[
+            Hero(
+              tag: imagen,
+              child: Material(
+                  child: Container(
+                      color: Colors.white,
+                      child: InkWell(
+                        onTap: () =>
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Listproduct(
+                                      nombre: nombre,
+                                      precio: precio,
+                                      imagen: imagen,
+                                    ))),
+                        child: Image.network(
+                          imagen,
+                          alignment: Alignment.center,
+                          width: 170,
+                          height: 170,
+                        ),
+                      ))),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(3.0),
+            ),
+            Text(nombre,
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 35.0,
+                    color: Colors.black)),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+            ),
+            Text(precio.toString(),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.5,
+                    color: Colors.black)),
+          ],
         ),
       ),
     );

@@ -13,9 +13,9 @@ class AuthService {
           data: {"email": email, "password": password},
           options: Options(contentType: Headers.formUrlEncodedContentType));
 
-      await storage.write(key: "token", value: res.data["token"]);
+      /* await storage.write(key: "token", value: res.data["token"]);
       var token = await storage.read(key: "token");
-      log("TOKEN" + token.toString());
+      log("TOKEN" + token.toString()); */
       return res;
     } on DioError catch (e) {
       return e.response;

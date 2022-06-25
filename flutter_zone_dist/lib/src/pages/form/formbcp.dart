@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import "package:flutter/material.dart";
+import 'package:flutter_zone_dist/src/pages/form/listproduct.dart';
 import 'package:flutter_zone_dist/src/services/cardservice.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
@@ -26,11 +27,19 @@ class _FormbcpState extends State<Formbcp> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Categorias",
+          "Forma de Pago",
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 28.0, color: Colors.black),
         ),
         backgroundColor: Colors.amberAccent,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            setState(() {
+              Navigator.pushNamed(context, Listproduct.id);
+            });
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -77,8 +86,8 @@ class _FormbcpState extends State<Formbcp> {
                           showDialog(
                               context: context,
                               builder: (context) => AlertDialog(
-                                    title:
-                                        const Text("Registrado correctamente"),
+                                    title: const Text(
+                                        "Validación de datos correcta"),
                                     actions: <Widget>[
                                       TextButton(
                                           onPressed: () {},

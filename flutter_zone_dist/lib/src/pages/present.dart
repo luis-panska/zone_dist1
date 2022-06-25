@@ -93,9 +93,21 @@ class _PresentState extends State<Present> {
               leading: const Icon(Icons.comment_bank_outlined),
               title: const Text("Comentarios"),
               onTap: () {
-                setState(() {
-                  Navigator.pushNamed(context, Comments.id);
-                });
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          title: const Text("Esto aun no esta disponible"),
+                          actions: <Widget>[
+                            FlatButton(
+                              child: const Text("Regresar"),
+                              onPressed: () {
+                                setState(() {
+                                  Navigator.pushNamed(context, Present.id);
+                                });
+                              },
+                            ),
+                          ],
+                        ));
               },
             ),
             const SizedBox(
@@ -105,9 +117,21 @@ class _PresentState extends State<Present> {
               leading: const Icon(Icons.book_online_outlined),
               title: const Text("Lineamientos y regularidades"),
               onTap: () {
-                setState(() {
-                  Navigator.pushNamed(context, Politic.id);
-                });
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          title: const Text("Esto aun no esta disponible"),
+                          actions: <Widget>[
+                            FlatButton(
+                              child: const Text("Regresar"),
+                              onPressed: () {
+                                setState(() {
+                                  Navigator.pushNamed(context, Present.id);
+                                });
+                              },
+                            ),
+                          ],
+                        ));
               },
             ),
             const SizedBox(
@@ -117,9 +141,21 @@ class _PresentState extends State<Present> {
               leading: const Icon(Icons.description),
               title: const Text("Novedades"),
               onTap: () {
-                setState(() {
-                  Navigator.pushNamed(context, Politic.id);
-                });
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          title: const Text("Esto aun no esta disponible"),
+                          actions: <Widget>[
+                            FlatButton(
+                              child: const Text("Regresar"),
+                              onPressed: () {
+                                setState(() {
+                                  Navigator.pushNamed(context, Present.id);
+                                });
+                              },
+                            ),
+                          ],
+                        ));
               },
             ),
             const SizedBox(

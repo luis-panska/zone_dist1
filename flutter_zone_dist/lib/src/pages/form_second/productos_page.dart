@@ -130,7 +130,6 @@ class _ProductosPageState extends State<ProductosPage> {
                                       nombre: nombre,
                                       precio: precio,
                                       imagen: imagen,
-                                      description: description,
                                     ))),
                         child: Image.network(
                           imagen,

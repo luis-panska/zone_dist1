@@ -23,6 +23,7 @@ class CreditCardService {
 
   create({
     required String name,
+    required String avenida,
     required String number,
     required String expiration,
     required int cvv,
@@ -33,6 +34,7 @@ class CreditCardService {
       Response creditCard = await _dio.post("$_baseUrl",
           data: {
             "name": name,
+            "avenida": avenida,
             "number": number,
             "expiration": expiration,
             "cvv": cvv,

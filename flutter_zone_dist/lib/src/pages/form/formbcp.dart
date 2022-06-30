@@ -15,9 +15,18 @@ class Formbcp extends StatefulWidget {
 }
 
 class _FormbcpState extends State<Formbcp> {
-  var name = "", number = "", expiration = "", cvv = 0, userId = "";
+  var name = "",
+      number = "",
+      avenida = "",
+      expiration = "",
+      cvv = 0,
+      userId = "";
+  var nameMask = MaskTextInputFormatter(
+      mask: '####### ###############', filter: {"#": RegExp(r'[0-9]')});
   var cardMask = MaskTextInputFormatter(
-      mask: '####-####-####-####', filter: {"#": RegExp(r'[0-9]')});
+      mask: '#########', filter: {"#": RegExp(r'[0-9]')});
+  var avenidaMask = MaskTextInputFormatter(
+      mask: '##.####################', filter: {"#": RegExp(r'[0-9]')});
   var vardMask =
       MaskTextInputFormatter(mask: '##/##', filter: {"#": RegExp(r'[0-9]')});
   var codeMask =
@@ -52,6 +61,10 @@ class _FormbcpState extends State<Formbcp> {
             const SizedBox(
               height: 20,
             ),
+            _inputavenida(),
+            const SizedBox(
+              height: 20,
+            ),
             _inputTar(),
             const SizedBox(
               height: 10,
@@ -77,6 +90,7 @@ class _FormbcpState extends State<Formbcp> {
                         .create(
                             name: name,
                             number: number,
+                            avenida: avenida,
                             expiration: expiration,
                             cvv: cvv,
                             userId: userId)
@@ -131,12 +145,38 @@ class _FormbcpState extends State<Formbcp> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       margin: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
+        inputFormatters: [nameMask],
         style: const TextStyle(fontSize: 20),
         decoration: const InputDecoration(
-            hintText: "Su Nombre", border: InputBorder.none),
+            hintText: "Nombre de identificación", border: InputBorder.none),
         onChanged: (value) {
           setState(() {
             name = value;
+          });
+        },
+      ),
+    );
+  }
+
+  Container _inputavenida() {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        border: Border.all(
+          color: Colors.grey,
+        ),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      margin: const EdgeInsets.symmetric(horizontal: 15),
+      child: TextFormField(
+        inputFormatters: [nameMask],
+        keyboardType: TextInputType.text,
+        style: const TextStyle(fontSize: 20),
+        decoration: const InputDecoration(
+            hintText: "Av.dirección", border: InputBorder.none),
+        onChanged: (value) {
+          setState(() {
+            avenida = value;
           });
         },
       ),
@@ -155,10 +195,10 @@ class _FormbcpState extends State<Formbcp> {
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: TextFormField(
           inputFormatters: [cardMask],
-          keyboardType: TextInputType.number,
+          keyboardType: TextInputType.text,
           style: const TextStyle(fontSize: 20),
           decoration: const InputDecoration(
-              hintText: "0000-0000-0000-0000", border: InputBorder.none),
+              hintText: "Telefono", border: InputBorder.none),
           onChanged: (value) {
             setState(() {
               number = value;
@@ -182,7 +222,7 @@ class _FormbcpState extends State<Formbcp> {
           inputFormatters: [vardMask],
           style: const TextStyle(fontSize: 20),
           decoration: const InputDecoration(
-              hintText: "01/24", border: InputBorder.none),
+              hintText: "fecha", border: InputBorder.none),
           onChanged: (value) {
             setState(() {
               expiration = value;

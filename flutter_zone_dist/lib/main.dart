@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zone_dist/src/pages/form/formbcp.dart';
+import 'package:flutter_zone_dist/src/pages/form/listform.dart';
 import 'package:flutter_zone_dist/src/pages/form/listproduct.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/productos_page.dart';
 import 'package:flutter_zone_dist/src/pages/present.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_zone_dist/src/pages/categorias.dart';
 import 'package:flutter_zone_dist/src/pages/politic.dart';
 import 'package:flutter_zone_dist/src/pages/noveded.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/categor1.dart';
+import 'package:flutter_zone_dist/src/pages/form/listform.dart';
 
 import 'src/pages/loginpage.dart';
 
@@ -39,6 +41,7 @@ class MyApp extends StatelessWidget {
         Noveded.id: (context) => Noveded(),
         Listproduct.id: (context) => const Listproduct(),
         Formbcp.id: (context) => const Formbcp(),
+        Listform.id: (context) => Listform(),
       },
     );
   }

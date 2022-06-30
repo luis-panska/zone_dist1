@@ -59,7 +59,7 @@ class _CategoriasState extends State<Categorias> {
                   builder: (BuildContext context, snapshot) {
                     if (snapshot.hasData) {
                       return Padding(
-                        padding: const EdgeInsets.only(top: 40.0),
+                        padding: const EdgeInsets.only(top: 20.0),
                         child: SizedBox(
                           height: MediaQuery.of(context).size.height - 200.0,
                           child: GridView.count(
@@ -92,7 +92,7 @@ class _CategoriasState extends State<Categorias> {
   Widget _comidaRap(
       String idCategory, String title, String description, String imgUrl) {
     return Padding(
-      padding: const EdgeInsets.all(4.0),
+      padding: const EdgeInsets.all(3.0),
       child: Card(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
@@ -119,8 +119,8 @@ class _CategoriasState extends State<Categorias> {
                         child: Image.network(
                           imgUrl,
                           alignment: Alignment.center,
-                          width: 170,
-                          height: 170,
+                          width: 150,
+                          height: 150,
                         ),
                       ))),
             ),
@@ -130,10 +130,10 @@ class _CategoriasState extends State<Categorias> {
             Text(title,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 35.0,
+                    fontSize: 25.0,
                     color: Colors.black)),
             const Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(3.0),
             ),
             Text(description,
                 style: const TextStyle(

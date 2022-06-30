@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter_zone_dist/src/pages/categorias.dart';
 import 'package:flutter_zone_dist/src/pages/form/formbcp.dart';
+import 'package:flutter_zone_dist/src/pages/form/listform.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/categor1.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/productos_page.dart';
 
@@ -52,29 +53,6 @@ class _ListproductState extends State<Listproduct> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.question_answer),
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                        title: const Text(
-                            "Esta función no esta diponible por el momento"),
-                        actions: <Widget>[
-                          FlatButton(
-                            child: const Text("Regresar"),
-                            onPressed: () {
-                              setState(() {
-                                Navigator.pushNamed(context, Listproduct.id);
-                              });
-                            },
-                          ),
-                        ],
-                      ));
-            },
-          ),
-        ],
         title: const Text(
           "Información del producto",
           style: TextStyle(
@@ -89,14 +67,14 @@ class _ListproductState extends State<Listproduct> {
         backgroundColor: Colors.amberAccent,
       ),
       body: ListView(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(15.0),
         children: <Widget>[
           Stack(
             children: <Widget>[
               Container(
-                height: MediaQuery.of(context).size.height - 110.0,
+                height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                color: Colors.white30,
+                color: Colors.white,
               ),
               Positioned(
                   top: 15.0,
@@ -104,16 +82,16 @@ class _ListproductState extends State<Listproduct> {
                   bottom: 25,
                   child: Container(
                     decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 80, 123, 158),
+                        color: Color.fromARGB(188, 220, 164, 164),
                         borderRadius: BorderRadius.only(
-                            topRight: Radius.elliptical(95, 0),
-                            bottomLeft: Radius.elliptical(95, 0))),
+                            topRight: Radius.elliptical(105, 0),
+                            bottomLeft: Radius.elliptical(105, 0))),
                     height: MediaQuery.of(context).size.height - 110.0,
                     width: MediaQuery.of(context).size.width,
                   )),
               Positioned(
-                  top: (MediaQuery.of(context).size.height / 2) + 10.0,
-                  left: (MediaQuery.of(context).size.width / 2) - 40.0,
+                  top: (MediaQuery.of(context).size.height / 2) + 20.0,
+                  left: (MediaQuery.of(context).size.width / 2) - 30.0,
                   child: Hero(
                     tag: widget.imagen,
                     child: Container(
@@ -171,16 +149,16 @@ class _ListproductState extends State<Listproduct> {
                             fontSize: 22.0,
                             color: Colors.black)),
                     Container(
-                      decoration: BoxDecoration(
-                          color: Colors.grey[800],
-                          boxShadow: const [
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 196, 229, 130),
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 6.0,
                               color: Colors.blue,
                               offset: Offset(0.0, 1.0),
                             )
                           ],
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             topRight: Radius.elliptical(75, 0),
                             bottomLeft: Radius.elliptical(75, 0),
                           )),
@@ -192,19 +170,16 @@ class _ListproductState extends State<Listproduct> {
                             height: 20.0,
                           ),
                           IconButton(
-                            icon: const Icon(Icons.add, color: Colors.yellow),
+                            icon: const Icon(Icons.add_circle_outline,
+                                color: Color.fromARGB(149, 43, 65, 49)),
                             onPressed: () {
                               _incrementCounter();
                               _calculator();
                             },
                           ),
                           IconButton(
-                            icon: const Icon(Icons.fiber_smart_record),
-                            onPressed: () {},
-                          ),
-                          IconButton(
-                            icon:
-                                const Icon(Icons.remove, color: Colors.yellow),
+                            icon: const Icon(Icons.remove_circle_outline,
+                                color: Color.fromARGB(149, 43, 65, 49)),
                             onPressed: () {
                               _decrementCounter();
                               _calculator();

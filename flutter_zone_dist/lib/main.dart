@@ -40,7 +40,9 @@ class MyApp extends StatelessWidget {
         Politic.id: (context) => Politic(),
         Noveded.id: (context) => Noveded(),
         Listproduct.id: (context) => const Listproduct(),
-        Formbcp.id: (context) => const Formbcp(),
+        Formbcp.id: (context) => const Formbcp(
+              categoryId: '',
+            ),
         Listform.id: (context) => Listform(),
       },
     );

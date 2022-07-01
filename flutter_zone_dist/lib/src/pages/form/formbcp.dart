@@ -8,7 +8,7 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 class Formbcp extends StatefulWidget {
   static String id = "Formbcp";
 
-  const Formbcp({Key? key}) : super(key: key);
+  const Formbcp({Key? key, required String categoryId}) : super(key: key);
 
   @override
   _FormbcpState createState() => _FormbcpState();

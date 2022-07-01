@@ -1,7 +1,8 @@
 import "package:flutter/material.dart";
 import 'package:flutter_zone_dist/src/pages/categorias.dart';
-import 'package:flutter_zone_dist/src/pages/form/formbcp.dart';
+import 'package:flutter_zone_dist/src/pages/form/form_bank.dart';
 import 'package:flutter_zone_dist/src/pages/form/listform.dart';
+import 'package:flutter_zone_dist/src/pages/form/metodos_pago.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/categor1.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/productos_page.dart';
 
@@ -234,7 +235,7 @@ class _ListproductState extends State<Listproduct> {
                       color: const Color.fromARGB(255, 29, 120, 194),
                       onPressed: () {
                         setState(() {
-                          Navigator.pushNamed(context, Listform.id);
+                          Navigator.pushNamed(context, MetodosPago.id);
                         });
                       },
                     ),

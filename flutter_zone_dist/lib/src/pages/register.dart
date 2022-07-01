@@ -183,7 +183,6 @@ class _RegistroState extends State<Registro> {
             phone: phone,
           )
               .then((value) {
-            log(value.toString());
             if (value != null) {
               if (value.data['ok']) {
                 showDialog(

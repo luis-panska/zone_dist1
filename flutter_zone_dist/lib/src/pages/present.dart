@@ -1,9 +1,10 @@
 import "package:flutter/material.dart";
 import 'package:flutter_zone_dist/src/pages/categorias.dart';
 import 'package:flutter_zone_dist/src/pages/comments.dart';
-import 'package:flutter_zone_dist/src/pages/form/formbcp.dart';
+import 'package:flutter_zone_dist/src/pages/form/form_bank.dart';
 import 'package:flutter_zone_dist/src/pages/loginpage.dart';
 import 'package:flutter_zone_dist/src/pages/politic.dart';
+import 'package:flutter_zone_dist/src/services/authservice.dart';
 
 class Present extends StatefulWidget {
   static String id = "Present";
@@ -173,10 +174,9 @@ class _PresentState extends State<Present> {
                           actions: <Widget>[
                             FlatButton(
                               child: const Text("Si"),
-                              onPressed: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, LoginPage.id);
-                                });
+                              onPressed: () async {
+                                await AuthService.logout();
+                                Navigator.pushNamed(context, LoginPage.id);
                               },
                             ),
                             FlatButton(

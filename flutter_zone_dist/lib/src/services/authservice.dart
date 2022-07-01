@@ -5,6 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 class AuthService {
   static final storage = FlutterSecureStorage();
   Dio dio = new Dio();
+  static String token = '';
 
   login(email, password) async {
     try {
@@ -13,9 +14,9 @@ class AuthService {
           data: {"email": email, "password": password},
           options: Options(contentType: Headers.formUrlEncodedContentType));
 
-      /* await storage.write(key: "token", value: res.data["token"]);
+      await storage.write(key: "token", value: res.data["token"]);
       var token = await storage.read(key: "token");
-      log("TOKEN" + token.toString()); */
+      log("TOKEN" + token.toString());
       return res;
     } on DioError catch (e) {
       return e.response;
@@ -38,6 +39,15 @@ class AuthService {
   }
 
   static Future<String?> getToken() async {
-    return await storage.read(key: "token");
+    var rta = await storage.read(key: "token");
+    if (rta != null && rta != "") {
+      AuthService.token = rta;
+    } else {
+      AuthService.token = '';
+    }
+  }
+
+  static Future<void> logout() async {
+    await storage.deleteAll();
   }
 }

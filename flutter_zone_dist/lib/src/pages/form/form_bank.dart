@@ -3,33 +3,26 @@ import 'dart:developer';
 import "package:flutter/material.dart";
 import 'package:flutter_zone_dist/src/pages/form/listproduct.dart';
 import 'package:flutter_zone_dist/src/services/cardservice.dart';
+import 'package:flutter_zone_dist/src/services/deliveryservice.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class Formbcp extends StatefulWidget {
-  static String id = "Formbcp";
+class FormBank extends StatefulWidget {
+  static String id = "FormBank";
 
-  const Formbcp({Key? key, required String categoryId}) : super(key: key);
+  final methodFormImage;
+  const FormBank({Key? key, this.methodFormImage}) : super(key: key);
 
   @override
-  _FormbcpState createState() => _FormbcpState();
+  _FormBankState createState() => _FormBankState();
 }
 
-class _FormbcpState extends State<Formbcp> {
-  var name = "",
-      number = "",
-      avenida = "",
-      expiration = "",
-      cvv = 0,
-      userId = "";
-  var nameMask = MaskTextInputFormatter(
-      mask: '####### ###############', filter: {"#": RegExp(r'[0-9]')});
-  var cardMask = MaskTextInputFormatter(
+class _FormBankState extends State<FormBank> {
+  var name = "", avenida = "", telefono = "", fecha = "", pin = 0, userId = "";
+  var phoneMask = MaskTextInputFormatter(
       mask: '#########', filter: {"#": RegExp(r'[0-9]')});
-  var avenidaMask = MaskTextInputFormatter(
-      mask: '##.####################', filter: {"#": RegExp(r'[0-9]')});
-  var vardMask =
-      MaskTextInputFormatter(mask: '##/##', filter: {"#": RegExp(r'[0-9]')});
-  var codeMask =
+  var dateMask =
+      MaskTextInputFormatter(mask: '##/##/##', filter: {"#": RegExp(r'[0-9]')});
+  var pinMask =
       MaskTextInputFormatter(mask: '###', filter: {"#": RegExp(r'[0-9]')});
   @override
   Widget build(BuildContext context) {
@@ -45,7 +38,7 @@ class _FormbcpState extends State<Formbcp> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             setState(() {
-              Navigator.pushNamed(context, Listproduct.id);
+              Navigator.of(context).pop();
             });
           },
         ),
@@ -53,7 +46,11 @@ class _FormbcpState extends State<Formbcp> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("lib/assets/images/bcp_card.png"),
+            Image.network(
+              widget.methodFormImage,
+              height: 200,
+              width: 200,
+            ),
             const SizedBox(
               height: 20,
             ),
@@ -86,26 +83,25 @@ class _FormbcpState extends State<Formbcp> {
               width: MediaQuery.of(context).size.width - 30,
               child: ElevatedButton(
                   onPressed: () {
-                    CreditCardService()
+                    DeliveryService()
                         .create(
-                            name: name,
-                            number: number,
-                            avenida: avenida,
-                            expiration: expiration,
-                            cvv: cvv,
-                            userId: userId)
+                            identification: name,
+                            address: avenida,
+                            phone: telefono,
+                            date: fecha,
+                            pin: pin)
                         .then((value) {
                       if (value != null) {
                         if (value.data['ok']) {
                           showDialog(
                               context: context,
                               builder: (context) => AlertDialog(
-                                    title: const Text(
-                                        "Validación de datos correcta"),
+                                    title:
+                                        const Text("Registrado correctamente"),
                                     actions: <Widget>[
                                       TextButton(
                                           onPressed: () {},
-                                          child: const Text("Ok"))
+                                          child: const Text("Ingresar"))
                                     ],
                                   ));
                         } else {
@@ -145,7 +141,6 @@ class _FormbcpState extends State<Formbcp> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       margin: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
-        inputFormatters: [nameMask],
         style: const TextStyle(fontSize: 20),
         decoration: const InputDecoration(
             hintText: "Nombre de identificación", border: InputBorder.none),
@@ -169,7 +164,6 @@ class _FormbcpState extends State<Formbcp> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       margin: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
-        inputFormatters: [nameMask],
         keyboardType: TextInputType.text,
         style: const TextStyle(fontSize: 20),
         decoration: const InputDecoration(
@@ -194,14 +188,14 @@ class _FormbcpState extends State<Formbcp> {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: TextFormField(
-          inputFormatters: [cardMask],
+          inputFormatters: [phoneMask],
           keyboardType: TextInputType.text,
           style: const TextStyle(fontSize: 20),
           decoration: const InputDecoration(
               hintText: "Telefono", border: InputBorder.none),
           onChanged: (value) {
             setState(() {
-              number = value;
+              telefono = value;
             });
           },
         ));
@@ -219,13 +213,13 @@ class _FormbcpState extends State<Formbcp> {
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: TextFormField(
           keyboardType: TextInputType.number,
-          inputFormatters: [vardMask],
+          inputFormatters: [dateMask],
           style: const TextStyle(fontSize: 20),
           decoration: const InputDecoration(
               hintText: "fecha", border: InputBorder.none),
           onChanged: (value) {
             setState(() {
-              expiration = value;
+              fecha = value;
             });
           },
         ));
@@ -242,13 +236,13 @@ class _FormbcpState extends State<Formbcp> {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: TextFormField(
-          inputFormatters: [codeMask],
+          inputFormatters: [pinMask],
           style: const TextStyle(fontSize: 20),
           decoration:
               const InputDecoration(hintText: "****", border: InputBorder.none),
           onChanged: (value) {
             setState(() {
-              cvv = int.parse(value);
+              pin = int.parse(value);
             });
           },
         ));

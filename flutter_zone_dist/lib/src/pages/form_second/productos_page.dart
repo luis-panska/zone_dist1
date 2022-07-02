@@ -110,7 +110,7 @@ class _ProductosPageState extends State<ProductosPage> {
   Widget _comidaRap1(String productId, String nombre, double precio,
       String description, String imagen) {
     return Padding(
-      padding: const EdgeInsets.all(3.0),
+      padding: const EdgeInsets.all(2.0),
       child: Card(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
@@ -134,29 +134,29 @@ class _ProductosPageState extends State<ProductosPage> {
                         child: Image.network(
                           imagen,
                           alignment: Alignment.center,
-                          width: 150,
-                          height: 150,
+                          width: 60,
+                          height: 60,
                         ),
                       ))),
             ),
             const Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(2.0),
             ),
             Text(nombre,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 25.0,
+                    fontSize: 18.0,
                     color: Colors.black)),
             const Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(2.0),
             ),
             Text(description,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 15.5,
+                    fontSize: 10.5,
                     color: Colors.black)),
             const Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(2.0),
             ),
             Text(precio.toString(),
                 style: const TextStyle(

@@ -119,26 +119,26 @@ class _CategoriasState extends State<Categorias> {
                         child: Image.network(
                           imgUrl,
                           alignment: Alignment.center,
-                          width: 150,
-                          height: 150,
+                          width: 55,
+                          height: 55,
                         ),
                       ))),
             ),
             const Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(2.0),
             ),
             Text(title,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 25.0,
+                    fontSize: 20.0,
                     color: Colors.black)),
             const Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(2.0),
             ),
             Text(description,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 15.5,
+                    fontSize: 10.5,
                     color: Colors.black)),
           ],
         ),

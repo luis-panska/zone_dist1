@@ -55,9 +55,9 @@ class _ListproductState extends State<Listproduct> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
-          "Información del producto",
+          "Productos",
           style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 28.0, color: Colors.black),
+              fontWeight: FontWeight.bold, fontSize: 25.0, color: Colors.black),
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),

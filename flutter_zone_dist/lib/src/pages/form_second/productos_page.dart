@@ -134,8 +134,8 @@ class _ProductosPageState extends State<ProductosPage> {
                         child: Image.network(
                           imagen,
                           alignment: Alignment.center,
-                          width: 60,
-                          height: 60,
+                          width: 55,
+                          height: 55,
                         ),
                       ))),
             ),
@@ -145,15 +145,15 @@ class _ProductosPageState extends State<ProductosPage> {
             Text(nombre,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 18.0,
+                    fontSize: 15.0,
                     color: Colors.black)),
             const Padding(
               padding: EdgeInsets.all(2.0),
             ),
             Text(description,
                 style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10.5,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 8.0,
                     color: Colors.black)),
             const Padding(
               padding: EdgeInsets.all(2.0),

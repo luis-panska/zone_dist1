@@ -19,7 +19,7 @@ class _MetodosPagoState extends State<MetodosPago> {
       backgroundColor: Color.fromARGB(87, 239, 219, 219),
       appBar: AppBar(
         title: const Text(
-          "Elegir forma de pago",
+          "Selecciona",
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 28.0, color: Colors.black),
         ),
@@ -91,7 +91,7 @@ class _MetodosPagoState extends State<MetodosPago> {
   Widget _metodoItem(String idMethodPayment, String title, String description,
       String imgUrl, String imageForm) {
     return Padding(
-      padding: const EdgeInsets.all(3.0),
+      padding: const EdgeInsets.all(1.0),
       child: Card(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
@@ -112,26 +112,26 @@ class _MetodosPagoState extends State<MetodosPago> {
                         child: Image.network(
                           imgUrl,
                           alignment: Alignment.center,
-                          width: 150,
-                          height: 150,
+                          width: 66,
+                          height: 66,
                         ),
                       ))),
             ),
             const Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(1.0),
             ),
             Text(title,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 25.0,
+                    fontSize: 15.0,
                     color: Colors.black)),
             const Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(1.0),
             ),
             Text(description,
                 style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15.5,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 10.0,
                     color: Colors.black)),
           ],
         ),

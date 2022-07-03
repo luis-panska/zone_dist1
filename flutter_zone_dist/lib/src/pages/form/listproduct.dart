@@ -79,7 +79,7 @@ class _ListproductState extends State<Listproduct> {
               ),
               Positioned(
                   top: 15.0,
-                  right: 80.0,
+                  right: 10.0,
                   bottom: 25,
                   child: Container(
                     decoration: const BoxDecoration(
@@ -91,8 +91,8 @@ class _ListproductState extends State<Listproduct> {
                     width: MediaQuery.of(context).size.width,
                   )),
               Positioned(
-                  top: (MediaQuery.of(context).size.height / 2) + 20.0,
-                  left: (MediaQuery.of(context).size.width / 2) - 30.0,
+                  top: (MediaQuery.of(context).size.height / 2) - 30.0,
+                  left: (MediaQuery.of(context).size.width / 2) + 20.0,
                   child: Hero(
                     tag: widget.imagen,
                     child: Container(
@@ -105,8 +105,8 @@ class _ListproductState extends State<Listproduct> {
                             image: NetworkImage(widget.imagen),
                             fit: BoxFit.cover,
                           )),
-                      height: 200.0,
-                      width: 200.0,
+                      height: 95.0,
+                      width: 95.0,
                     ),
                   )),
               Positioned(
@@ -119,7 +119,7 @@ class _ListproductState extends State<Listproduct> {
                     Text(widget.nombre,
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 22.0,
+                            fontSize: 17.0,
                             color: Colors.black)),
                     const SizedBox(
                       height: 20.0,
@@ -129,12 +129,12 @@ class _ListproductState extends State<Listproduct> {
                         const Text("Precio: ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 22.0,
+                                fontSize: 17.0,
                                 color: Colors.black)),
                         Text(widget.precio.toString(),
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 22.0,
+                                fontSize: 17.0,
                                 color: Colors.black)),
                         const SizedBox(
                           height: 20.0,
@@ -147,7 +147,7 @@ class _ListproductState extends State<Listproduct> {
                     Text("Cantidad: $_counter",
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 22.0,
+                            fontSize: 17.0,
                             color: Colors.black)),
                     Container(
                       decoration: const BoxDecoration(
@@ -212,7 +212,7 @@ class _ListproductState extends State<Listproduct> {
                       child: Text("Total: $_total",
                           style: const TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 20.0,
+                              fontSize: 15.0,
                               color: Colors.black)),
                     ),
                     const SizedBox(
@@ -225,7 +225,7 @@ class _ListproductState extends State<Listproduct> {
                         child: const Text("Pagar",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
+                                fontSize: 15.0,
                                 color: Colors.black)),
                       ),
                       shape: RoundedRectangleBorder(

@@ -43,7 +43,7 @@ class _ProductosPageState extends State<ProductosPage> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             setState(() {
-              Navigator.pushNamed(context, Categorias.id);
+              Navigator.of(context).pop();
             });
           },
         ),

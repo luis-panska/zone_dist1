@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import "package:flutter/material.dart";
+import 'package:flutter_zone_dist/src/pages/comments.dart';
+import 'package:flutter_zone_dist/src/pages/form/listform.dart';
 import 'package:flutter_zone_dist/src/pages/form/listproduct.dart';
 import 'package:flutter_zone_dist/src/services/cardservice.dart';
 import 'package:flutter_zone_dist/src/services/deliveryservice.dart';
@@ -96,12 +98,16 @@ class _FormBankState extends State<FormBank> {
                           showDialog(
                               context: context,
                               builder: (context) => AlertDialog(
-                                    title:
-                                        const Text("Registrado correctamente"),
+                                    title: const Text("Pedido aceptado"),
                                     actions: <Widget>[
                                       TextButton(
-                                          onPressed: () {},
-                                          child: const Text("Ingresar"))
+                                          onPressed: () {
+                                            setState(() {
+                                              Navigator.pushNamed(
+                                                  context, Comments.id);
+                                            });
+                                          },
+                                          child: const Text("Continuar"))
                                     ],
                                   ));
                         } else {

@@ -30,7 +30,7 @@ class _CategoriasState extends State<Categorias> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             setState(() {
-              Navigator.pushNamed(context, Present.id);
+              Navigator.of(context).pop();
             });
           },
         ),

@@ -29,7 +29,7 @@ class _PresentState extends State<Present> {
               Text(
                 "Presentación".toUpperCase(),
                 style: const TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 28.0),
+                    fontWeight: FontWeight.bold, fontSize: 22.0),
               ),
             ],
           ),
@@ -41,13 +41,13 @@ class _PresentState extends State<Present> {
                     context: context,
                     builder: (context) => AlertDialog(
                           title: const Text(
-                              "Esta función no esta diponible por el momento"),
+                              "Esta función te permite regresar a la ventana anterior"),
                           actions: <Widget>[
                             FlatButton(
                               child: const Text("Regresar"),
                               onPressed: () {
                                 setState(() {
-                                  Navigator.pushNamed(context, Present.id);
+                                  Navigator.of(context).pop();
                                 });
                               },
                             ),

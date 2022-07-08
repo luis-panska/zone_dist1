@@ -4,6 +4,8 @@ import 'package:flutter_zone_dist/src/pages/comments.dart';
 import 'package:flutter_zone_dist/src/pages/form/form_bank.dart';
 import 'package:flutter_zone_dist/src/pages/loginpage.dart';
 import 'package:flutter_zone_dist/src/pages/politic.dart';
+import 'package:flutter_zone_dist/src/pages/text_form/description.dart';
+import 'package:flutter_zone_dist/src/pages/text_form/present_dest.dart';
 import 'package:flutter_zone_dist/src/services/authservice.dart';
 
 class Present extends StatefulWidget {
@@ -14,6 +16,8 @@ class Present extends StatefulWidget {
 }
 
 class _PresentState extends State<Present> {
+  String presentNeto =
+      "Esto es una app de delivery, donde se puso a prueba lo aprendido en clase tanto para hacer requerimientos funcionales como no funcionales, la valoración que se hizo a usuarios es de 3 estrellas y media, los datos que se guardan no son publicos y la información que se coloque nos permitira conocer mas al usuario y asi ir mejorando de a poco la app, se pregunto a un externo el tema de colores y cosas que queria que hiciera la app , segun eso se estuvo avanzando.";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -58,7 +62,40 @@ class _PresentState extends State<Present> {
           ],
           backgroundColor: Colors.amberAccent,
         ),
-        backgroundColor: Color.fromARGB(255, 223, 170, 188),
+        body: presentDesc("Bienvenido", 5, presentNeto),
+        floatingActionButton: RaisedButton(
+          child: Container(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 60.0, vertical: 15.0),
+            child: const Text(
+              "Página web",
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          elevation: 10.0,
+          color: Colors.blue,
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                      title: const Text("Esto aun no esta disponible"),
+                      actions: <Widget>[
+                        FlatButton(
+                          child: const Text("Regresar"),
+                          onPressed: () {
+                            setState(() {
+                              Navigator.pushNamed(context, Present.id);
+                            });
+                          },
+                        ),
+                      ],
+                    ));
+          },
+        ),
+        backgroundColor: const Color.fromARGB(255, 223, 170, 188),
         drawer: Drawer(
             child: ListView(
           padding: EdgeInsets.zero,
@@ -94,54 +131,6 @@ class _PresentState extends State<Present> {
             ListTile(
               leading: const Icon(Icons.comment_bank_outlined),
               title: const Text("Comentarios"),
-              onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                          title: const Text("Esto aun no esta disponible"),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: const Text("Regresar"),
-                              onPressed: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, Present.id);
-                                });
-                              },
-                            ),
-                          ],
-                        ));
-              },
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            ListTile(
-              leading: const Icon(Icons.book_online_outlined),
-              title: const Text("Lineamientos y regularidades"),
-              onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                          title: const Text("Esto aun no esta disponible"),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: const Text("Regresar"),
-                              onPressed: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, Present.id);
-                                });
-                              },
-                            ),
-                          ],
-                        ));
-              },
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            ListTile(
-              leading: const Icon(Icons.description),
-              title: const Text("Novedades"),
               onTap: () {
                 showDialog(
                     context: context,

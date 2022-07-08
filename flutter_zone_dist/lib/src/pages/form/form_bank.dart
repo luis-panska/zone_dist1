@@ -128,7 +128,7 @@ class _FormBankState extends State<FormBank> {
                       }
                     });
                   },
-                  child: const Text("Pagar")),
+                  child: const Text("Confirmar datos")),
             ),
           ],
         ),
@@ -243,9 +243,9 @@ class _FormBankState extends State<FormBank> {
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: TextFormField(
           inputFormatters: [pinMask],
-          style: const TextStyle(fontSize: 20),
-          decoration:
-              const InputDecoration(hintText: "****", border: InputBorder.none),
+          style: const TextStyle(fontSize: 15),
+          decoration: const InputDecoration(
+              hintText: "Num.domicilio", border: InputBorder.none),
           onChanged: (value) {
             setState(() {
               pin = int.parse(value);

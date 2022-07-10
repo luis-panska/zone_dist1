@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zone_dist/src/pages/ant.dart';
 import 'package:flutter_zone_dist/src/pages/form/form_bank.dart';
 import 'package:flutter_zone_dist/src/pages/form/listform.dart';
 import 'package:flutter_zone_dist/src/pages/form/listproduct.dart';
 import 'package:flutter_zone_dist/src/pages/form/metodos_pago.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/productos_page.dart';
+import 'package:flutter_zone_dist/src/pages/locate.dart';
 import 'package:flutter_zone_dist/src/pages/present.dart';
 import 'package:flutter_zone_dist/src/pages/comments.dart';
 import 'package:flutter_zone_dist/src/pages/register.dart';
@@ -12,7 +14,6 @@ import 'package:flutter_zone_dist/src/pages/politic.dart';
 import 'package:flutter_zone_dist/src/pages/noveded.dart';
 import 'package:flutter_zone_dist/src/pages/form_second/categor1.dart';
 import 'package:flutter_zone_dist/src/services/authservice.dart';
-
 import 'src/pages/loginpage.dart';
 
 void main() async {
@@ -50,6 +51,8 @@ class MyApp extends StatelessWidget {
               methodFormImage: '',
             ),
         Listform.id: (context) => Listform(),
+        Locate.id: (context) => Locate(),
+        Ant.id: (context) => Ant(),
       },
     );
   }

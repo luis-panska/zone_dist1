@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:flutter_zone_dist/src/pages/categorias.dart';
 import 'package:flutter_zone_dist/src/pages/comments.dart';
 import 'package:flutter_zone_dist/src/pages/form/form_bank.dart';
+import 'package:flutter_zone_dist/src/pages/locate.dart';
 import 'package:flutter_zone_dist/src/pages/loginpage.dart';
 import 'package:flutter_zone_dist/src/pages/politic.dart';
 import 'package:flutter_zone_dist/src/pages/text_form/description.dart';
@@ -130,23 +131,11 @@ class _PresentState extends State<Present> {
             ),
             ListTile(
               leading: const Icon(Icons.comment_bank_outlined),
-              title: const Text("Comentarios"),
+              title: const Text("Sobre nosotros"),
               onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                          title: const Text("Esto aun no esta disponible"),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: const Text("Regresar"),
-                              onPressed: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, Present.id);
-                                });
-                              },
-                            ),
-                          ],
-                        ));
+                setState(() {
+                  Navigator.pushNamed(context, Comments.id);
+                });
               },
             ),
             const SizedBox(

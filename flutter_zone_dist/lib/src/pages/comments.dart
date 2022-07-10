@@ -30,36 +30,14 @@ class _CommentsState extends State<Comments> {
             ),
           ],
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.lock_open_rounded, color: Colors.black),
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                        title: const Text("Regresar al inicio"),
-                        actions: <Widget>[
-                          FlatButton(
-                            child: const Text("si"),
-                            onPressed: () {
-                              setState(() {
-                                Navigator.pushNamed(context, Present.id);
-                              });
-                            },
-                          ),
-                          FlatButton(
-                            child: const Text("no"),
-                            onPressed: () {
-                              setState(() {
-                                Navigator.pushNamed(context, Comments.id);
-                              });
-                            },
-                          ),
-                        ],
-                      ));
-            },
-          ),
-        ],
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            setState(() {
+              Navigator.of(context).pop();
+            });
+          },
+        ),
         backgroundColor: Colors.amberAccent,
       ),
       body: Stack(
@@ -74,36 +52,6 @@ class _CommentsState extends State<Comments> {
         ],
       ),
       backgroundColor: const Color.fromARGB(255, 223, 170, 188),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color.fromARGB(255, 80, 39, 169),
-        foregroundColor: const Color.fromARGB(240, 244, 198, 11),
-        child: const Icon(Icons.pan_tool_alt_sharp),
-        onPressed: () {
-          showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                    title: const Text("¿Visualizar el producto?"),
-                    actions: <Widget>[
-                      FlatButton(
-                        child: const Text("si"),
-                        onPressed: () {
-                          setState(() {
-                            Navigator.pushNamed(context, Comments.id);
-                          });
-                        },
-                      ),
-                      FlatButton(
-                        child: const Text("no"),
-                        onPressed: () {
-                          setState(() {
-                            Navigator.pushNamed(context, Comments.id);
-                          });
-                        },
-                      ),
-                    ],
-                  ));
-        },
-      ),
     );
   }
 }

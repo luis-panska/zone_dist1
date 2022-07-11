@@ -9,6 +9,10 @@ import 'package:flutter_zone_dist/src/pages/text_form/description.dart';
 import 'package:flutter_zone_dist/src/pages/text_form/present_dest.dart';
 import 'package:flutter_zone_dist/src/services/authservice.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
+final Uri _urlPaginaWeb = Uri.parse('https://flutter.dev');
+
 class Present extends StatefulWidget {
   static String id = "Present";
 
@@ -19,6 +23,13 @@ class Present extends StatefulWidget {
 class _PresentState extends State<Present> {
   String presentNeto =
       "Esto es una app de delivery, donde se puso a prueba lo aprendido en clase tanto para hacer requerimientos funcionales como no funcionales, la valoración que se hizo a usuarios es de 3 estrellas y media, los datos que se guardan no son publicos y la información que se coloque nos permitira conocer mas al usuario y asi ir mejorando de a poco la app, se pregunto a un externo el tema de colores y cosas que queria que hiciera la app , segun eso se estuvo avanzando.";
+
+  void goToPageWeb() async {
+    if (!await launchUrl(_urlPaginaWeb)) {
+      throw 'Nose pudo ingresar $_urlPaginaWeb';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -65,21 +76,21 @@ class _PresentState extends State<Present> {
         ),
         body: presentDesc("Bienvenido", 5, presentNeto),
         floatingActionButton: RaisedButton(
-          child: Container(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 60.0, vertical: 15.0),
-            child: const Text(
-              "Página web",
-              style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
+            child: Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 60.0, vertical: 15.0),
+              child: const Text(
+                "Página web",
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          elevation: 10.0,
-          color: Colors.blue,
-          onPressed: () {
-            showDialog(
+            elevation: 10.0,
+            color: Colors.blue,
+            onPressed: goToPageWeb
+            /* showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
                       title: const Text("Esto aun no esta disponible"),
@@ -93,9 +104,9 @@ class _PresentState extends State<Present> {
                           },
                         ),
                       ],
-                    ));
-          },
-        ),
+                    )); */
+
+            ),
         backgroundColor: const Color.fromARGB(255, 223, 170, 188),
         drawer: Drawer(
             child: ListView(

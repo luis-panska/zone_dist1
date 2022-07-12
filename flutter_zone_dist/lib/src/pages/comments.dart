@@ -31,14 +31,17 @@ class _CommentsState extends State<Comments> {
           ],
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
           onPressed: () {
             setState(() {
-              Navigator.of(context).pop();
+              Navigator.pushNamed(context, Present.id);
             });
           },
         ),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Color.fromARGB(255, 105, 208, 237),
       ),
       body: Stack(
         children: <Widget>[
@@ -51,7 +54,7 @@ class _CommentsState extends State<Comments> {
           )
         ],
       ),
-      backgroundColor: const Color.fromARGB(255, 223, 170, 188),
+      backgroundColor: Colors.white70,
     );
   }
 }

@@ -45,7 +45,9 @@ class _PresentState extends State<Present> {
               Text(
                 "Presentación".toUpperCase(),
                 style: const TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 22.0),
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22.0),
               ),
             ],
           ),
@@ -72,7 +74,7 @@ class _PresentState extends State<Present> {
               },
             ),
           ],
-          backgroundColor: Colors.amberAccent,
+          backgroundColor: Color.fromARGB(255, 105, 208, 237),
         ),
         body: presentDesc("Bienvenido", 5, presentNeto),
         floatingActionButton: RaisedButton(
@@ -107,7 +109,7 @@ class _PresentState extends State<Present> {
                     )); */
 
             ),
-        backgroundColor: const Color.fromARGB(255, 223, 170, 188),
+        backgroundColor: Colors.white70,
         drawer: Drawer(
             child: ListView(
           padding: EdgeInsets.zero,
@@ -125,7 +127,7 @@ class _PresentState extends State<Present> {
                 ],
               ),
               decoration: const BoxDecoration(
-                color: Colors.amber,
+                color: Color.fromARGB(255, 105, 208, 237),
               ),
             ),
             ListTile(

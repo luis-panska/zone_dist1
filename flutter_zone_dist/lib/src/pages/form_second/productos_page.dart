@@ -38,9 +38,12 @@ class _ProductosPageState extends State<ProductosPage> {
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 28.0, color: Colors.black),
         ),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Color.fromARGB(255, 105, 208, 237),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
           onPressed: () {
             setState(() {
               Navigator.of(context).pop();
@@ -48,7 +51,7 @@ class _ProductosPageState extends State<ProductosPage> {
           },
         ),
       ),
-      backgroundColor: Colors.amberAccent,
+      backgroundColor: Colors.white70,
       body: ListView(
         padding: const EdgeInsets.all(10.0),
         children: <Widget>[
@@ -61,7 +64,7 @@ class _ProductosPageState extends State<ProductosPage> {
           Container(
             height: MediaQuery.of(context).size.height - 122.0,
             decoration: const BoxDecoration(
-              color: Color.fromARGB(223, 228, 204, 204),
+              color: Color.fromARGB(255, 105, 208, 237),
             ),
             child: ListView(
               padding:

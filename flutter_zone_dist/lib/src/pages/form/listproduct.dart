@@ -65,7 +65,7 @@ class _ListproductState extends State<Listproduct> {
             Navigator.of(context).pop();
           },
         ),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Color.fromARGB(255, 105, 208, 237),
       ),
       body: ListView(
         padding: const EdgeInsets.all(15.0),
@@ -83,7 +83,7 @@ class _ListproductState extends State<Listproduct> {
                   bottom: 25,
                   child: Container(
                     decoration: const BoxDecoration(
-                        color: Color.fromARGB(188, 220, 164, 164),
+                        color: Color.fromARGB(255, 105, 208, 237),
                         borderRadius: BorderRadius.only(
                             topRight: Radius.elliptical(105, 0),
                             bottomLeft: Radius.elliptical(105, 0))),

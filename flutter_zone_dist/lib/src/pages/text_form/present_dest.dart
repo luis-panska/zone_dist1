@@ -69,8 +69,8 @@ class presentDesc extends StatelessWidget {
         description,
         style: const TextStyle(
           fontSize: 17.0,
-          fontWeight: FontWeight.normal,
-          color: Colors.black45,
+          fontWeight: FontWeight.bold,
+          color: Colors.black54,
         ),
       ),
     );

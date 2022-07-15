@@ -36,7 +36,7 @@ class _FormBankState extends State<FormBank> {
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 28.0, color: Colors.black),
         ),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Color.fromARGB(255, 105, 208, 237),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {

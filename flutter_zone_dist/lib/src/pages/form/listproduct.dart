@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'dart:async';
+
 import 'package:flutter_zone_dist/src/pages/categorias.dart';
 import 'package:flutter_zone_dist/src/pages/form/form_bank.dart';
 import 'package:flutter_zone_dist/src/pages/form/listform.dart';
@@ -21,8 +23,8 @@ class Listproduct extends StatefulWidget {
 }
 
 class _ListproductState extends State<Listproduct> {
-  int _counter = 0;
-  int _total = 0;
+  double _counter = 0;
+  double _total = 0;
 
   void _incrementCounter() {
     setState(() {
@@ -39,9 +41,9 @@ class _ListproductState extends State<Listproduct> {
   void _calculator() {
     var numero1 = widget.precio;
 
-    int numero2 = _counter;
+    double numero2 = _counter;
 
-    int resul = numero1 * numero2;
+    double resul = numero1 * numero2;
 
     setState(() {
       _total = resul;

@@ -3,6 +3,7 @@ import 'package:flutter_zone_dist/src/pages/locate.dart';
 import 'package:flutter_zone_dist/src/pages/present.dart';
 import 'package:flutter_zone_dist/src/pages/text_form/mapasdesc.dart';
 import 'package:flutter_zone_dist/src/pages/text_form/present_dest.dart';
+import 'dart:async';
 
 class Ant extends StatefulWidget {
   static String id = "ant";
@@ -65,7 +66,7 @@ class _AntState extends State<Ant> {
             },
           ),
         ],
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Color.fromARGB(255, 105, 208, 237),
       ),
       body: Stack(
         children: <Widget>[
@@ -92,7 +93,7 @@ class _AntState extends State<Ant> {
           )
         ],
       ),
-      backgroundColor: const Color.fromARGB(255, 223, 170, 188),
+      backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color.fromARGB(255, 80, 39, 169),
         foregroundColor: const Color.fromARGB(240, 244, 198, 11),

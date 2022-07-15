@@ -10,7 +10,7 @@ class _ListformState extends State<Listform> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(87, 239, 219, 219),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           "Elegir forma de pago",
@@ -23,7 +23,7 @@ class _ListformState extends State<Listform> {
             Navigator.of(context).pop();
           },
         ),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Color.fromARGB(255, 105, 208, 237),
       ),
     );
   }

@@ -16,7 +16,7 @@ class _MetodosPagoState extends State<MetodosPago> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(87, 239, 219, 219),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           "Selecciona",
@@ -29,7 +29,7 @@ class _MetodosPagoState extends State<MetodosPago> {
             Navigator.of(context).pop();
           },
         ),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Color.fromARGB(255, 105, 208, 237),
       ),
       body: ListView(
         padding: const EdgeInsets.all(10.0),
@@ -43,7 +43,7 @@ class _MetodosPagoState extends State<MetodosPago> {
           Container(
             height: MediaQuery.of(context).size.height - 122.0,
             decoration: const BoxDecoration(
-              color: Color.fromARGB(223, 228, 204, 204),
+              color: Color.fromARGB(255, 105, 208, 237),
             ),
             child: ListView(
               padding:

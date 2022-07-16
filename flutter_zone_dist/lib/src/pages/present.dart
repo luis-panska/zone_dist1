@@ -11,7 +11,7 @@ import 'package:flutter_zone_dist/src/services/authservice.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
-final Uri _urlPaginaWeb = Uri.parse('https://flutter.dev');
+final Uri _urlPaginaWeb = Uri.parse('https://zonedist.netlify.app/');
 
 class Present extends StatefulWidget {
   static String id = "Present";

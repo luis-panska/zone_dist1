@@ -73,7 +73,7 @@ class _AntState extends State<Ant> {
           ListView(
             children: <Widget>[
               MapasDesc("Pantalla de vista",
-                  "Se puede apreciar la cateogira, el producto, el consto de este + el envio, la modalidad de pago será que el repartidor llegara con un OPS atu hogar para que puedas pagar en la puerta de tu casa."),
+                  "Se puede apreciar la cateogira, el producto, el consto de este + el envio, la modalidad de pago será que el repartidor llegara con un OPS atu hogar para que puedas pagar en la puerta de tu casa, gracias por llegar hasta aqui."),
               /*  Positioned(
                 top: 20.0,
                 left: 25.0,

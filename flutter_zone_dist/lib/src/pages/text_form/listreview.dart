@@ -9,12 +9,10 @@ class ReviewList extends StatelessWidget {
       children: <Widget>[
         Review("lib/assets/images/perro.png", "Luis Mamani",
             "18 años Ciclo III", "Programador del grupo"),
-        Review("lib/assets/images/perro.png", "Percy Roger",
-            "18 años Ciclo III", "There is an amazing place in Sri Lanka."),
-        Review("lib/assets/images/perro.png", "Cristopher Cabello",
-            "18 años Ciclo III", "There is an amazing place in Sri Lanka."),
-        Review("lib/assets/images/perro.png", "Henry Samir Villanueva",
-            "Profesor de Certus", "Puse su nombre sin consentimiento."),
+        Review("lib/assets/images/stich.png", "Percy Roger",
+            "24 años Ciclo III", "Jefe de pruebas."),
+        Review("lib/assets/images/nemo.png", "Cristopher Cabello",
+            "20 años Ciclo III", "Realizador de testing."),
       ],
     );
   }
